@@ -30,12 +30,12 @@ const PareceresSection = ({ user }: PareceresProps) => {
   const pareceres = [
     {
       id: "001/2024",
-      numero_protocolo: "PM-001-2024",
-      titulo: "Análise de Prescrição - Deserção Militar",
+      numero_protocolo: "SP-001-2024",
+      titulo: "Análise de Prescrição - Deserção",
       servidor: "Soldado João Silva",
       categoria: "militar_estadual",
-      orgao: "Polícia Militar",
-      area_direito: "penal_militar",
+      orgao: "Segurança Pública",
+      area_direito: "penal",
       status: "aprovado",
       data_criacao: "2024-01-15",
       data_fato: "2020-03-10",
@@ -45,11 +45,11 @@ const PareceresSection = ({ user }: PareceresProps) => {
     },
     {
       id: "002/2024",
-      numero_protocolo: "PM-002-2024", 
+      numero_protocolo: "SP-002-2024", 
       titulo: "Parecer sobre Insubordinação em Serviço",
       servidor: "Cabo Maria Santos",
       categoria: "militar_estadual",
-      orgao: "Polícia Militar",
+      orgao: "Segurança Pública",
       area_direito: "administrativo",
       status: "revisao",
       data_criacao: "2024-01-14",
@@ -60,11 +60,11 @@ const PareceresSection = ({ user }: PareceresProps) => {
     },
     {
       id: "003/2024",
-      numero_protocolo: "SR-003-2024",
-      titulo: "Análise de Peculato - Servidor Civil",
+      numero_protocolo: "RS-003-2024",
+      titulo: "Análise de Peculato - Servidor",
       servidor: "Ana Paula Oliveira",
       categoria: "servidor_civil", 
-      orgao: "Secretaria de Ressocialização",
+      orgao: "Ressocialização",
       area_direito: "penal",
       status: "rascunho",
       data_criacao: "2024-01-13",
@@ -75,11 +75,11 @@ const PareceresSection = ({ user }: PareceresProps) => {
     },
     {
       id: "004/2024",
-      numero_protocolo: "PC-004-2024",
+      numero_protocolo: "IV-004-2024",
       titulo: "Parecer sobre Abuso de Autoridade",
       servidor: "Delegado Carlos Ferreira",
       categoria: "policial_civil",
-      orgao: "Polícia Civil", 
+      orgao: "Investigação", 
       area_direito: "administrativo",
       status: "aprovado",
       data_criacao: "2024-01-12",
@@ -90,12 +90,12 @@ const PareceresSection = ({ user }: PareceresProps) => {
     },
     {
       id: "005/2024",
-      numero_protocolo: "BM-005-2024",
-      titulo: "Análise de Deserção - Bombeiro Militar", 
+      numero_protocolo: "EM-005-2024",
+      titulo: "Análise de Deserção", 
       servidor: "Sargento Pedro Costa",
       categoria: "bombeiro_militar",
-      orgao: "Corpo de Bombeiros",
-      area_direito: "penal_militar",
+      orgao: "Emergências",
+      area_direito: "penal",
       status: "entregue",
       data_criacao: "2024-01-11",
       data_fato: "2022-06-30",
@@ -118,6 +118,18 @@ const PareceresSection = ({ user }: PareceresProps) => {
     return <Badge className={config.color}>{config.label}</Badge>;
   };
 
+  const getOrgaoBadge = (orgao: string) => {
+    const orgaoConfig = {
+      "Segurança Pública": { color: "bg-blue-100 text-blue-800", label: "Segurança Pública" },
+      "Investigação": { color: "bg-green-100 text-green-800", label: "Investigação" },
+      "Ressocialização": { color: "bg-purple-100 text-purple-800", label: "Ressocialização" },
+      "Emergências": { color: "bg-red-100 text-red-800", label: "Emergências" }
+    };
+    
+    const config = orgaoConfig[orgao as keyof typeof orgaoConfig] || { color: "bg-blue-100 text-blue-800", label: orgao };
+    return <Badge className={config.color}>{config.label}</Badge>;
+  };
+
   const getUrgenciaBadge = (urgencia: string) => {
     const urgenciaConfig = {
       baixa: { color: "bg-green-100 text-green-800", label: "Baixa" },
@@ -127,18 +139,6 @@ const PareceresSection = ({ user }: PareceresProps) => {
     
     const config = urgenciaConfig[urgencia as keyof typeof urgenciaConfig] || urgenciaConfig.media;
     return <Badge variant="outline" className={config.color}>{config.label}</Badge>;
-  };
-
-  const getOrgaoBadge = (orgao: string) => {
-    const orgaoConfig = {
-      "Polícia Militar": { color: "bg-blue-100 text-blue-800", label: "Polícia Militar" },
-      "Polícia Civil": { color: "bg-green-100 text-green-800", label: "Polícia Civil" },
-      "Secretaria de Ressocialização": { color: "bg-purple-100 text-purple-800", label: "Secretaria de Ressocialização" },
-      "Corpo de Bombeiros": { color: "bg-red-100 text-red-800", label: "Corpo de Bombeiros" }
-    };
-    
-    const config = orgaoConfig[orgao as keyof typeof orgaoConfig] || { color: "bg-blue-100 text-blue-800", label: orgao };
-    return <Badge className={config.color}>{config.label}</Badge>;
   };
 
   const isPrescricaoProxima = (dataPrescricao: string) => {

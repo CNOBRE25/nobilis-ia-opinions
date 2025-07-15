@@ -74,8 +74,8 @@ const NovoParecer = ({ user, onClose, onSave }: NovoParecerProps) => {
     let prazoPrescricao = 20; // anos - padrão para crimes comuns
     let legislacaoAplicavel = "Código Penal Brasileiro";
     
-    if (formData.categoria_funcional === "militar_estadual" || formData.categoria_funcional === "bombeiro_militar") {
-      if (formData.situacao_servico === "em_servico") {
+    if (formData.categoria_funcional === 'militar_estadual' || formData.categoria_funcional === 'bombeiro_militar') {
+      if (formData.situacao_servico === 'em_servico') {
         prazoPrescricao = 8;
         legislacaoAplicavel = "Código Penal Militar";
       }

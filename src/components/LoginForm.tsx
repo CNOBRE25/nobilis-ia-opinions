@@ -114,10 +114,10 @@ const LoginForm = ({ onLogin, onUserChange }: LoginFormProps) => {
                 <SelectValue placeholder="Selecione seu órgão" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="policia_militar">Polícia Militar de Pernambuco</SelectItem>
-                <SelectItem value="policia_civil">Polícia Civil de Pernambuco</SelectItem>
-                <SelectItem value="ressocializacao">Secretaria de Ressocialização</SelectItem>
-                <SelectItem value="bombeiros">Corpo de Bombeiros Militar</SelectItem>
+                <SelectItem value="seguranca_publica">Segurança Pública</SelectItem>
+                <SelectItem value="investigacao">Investigação</SelectItem>
+                <SelectItem value="ressocializacao">Ressocialização</SelectItem>
+                <SelectItem value="emergencias">Emergências</SelectItem>
               </SelectContent>
             </Select>
           </div>

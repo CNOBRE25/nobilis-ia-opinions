@@ -30,10 +30,10 @@ const Index = () => {
             </div>
             
             <div className="flex flex-wrap justify-center gap-2 mb-8">
-              <Badge variant="secondary" className="bg-blue-800 text-blue-100">Polícia Militar</Badge>
-              <Badge variant="secondary" className="bg-green-800 text-green-100">Polícia Civil</Badge>
-              <Badge variant="secondary" className="bg-purple-800 text-purple-100">Secretaria de Ressocialização</Badge>
-              <Badge variant="secondary" className="bg-red-800 text-red-100">Corpo de Bombeiros</Badge>
+              <Badge variant="secondary" className="bg-blue-800 text-blue-100">Segurança Pública</Badge>
+              <Badge variant="secondary" className="bg-green-800 text-green-100">Investigação</Badge>
+              <Badge variant="secondary" className="bg-purple-800 text-purple-100">Ressocialização</Badge>
+              <Badge variant="secondary" className="bg-red-800 text-red-100">Emergências</Badge>
             </div>
           </div>
 

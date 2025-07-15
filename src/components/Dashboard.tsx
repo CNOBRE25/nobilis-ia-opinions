@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -32,22 +31,22 @@ const Dashboard = ({ user }: DashboardProps) => {
   const recentPareceres = [
     {
       id: "001/2024",
-      titulo: "Análise de Prescrição - Deserção Militar",
-      orgao: "Polícia Militar",
+      titulo: "Análise de Prescrição - Deserção",
+      orgao: "Segurança Pública",
       status: "aprovado",
       data: "2024-01-15",
     },
     {
       id: "002/2024", 
       titulo: "Parecer sobre Insubordinação",
-      orgao: "Polícia Militar",
+      orgao: "Segurança Pública",
       status: "revisao",
       data: "2024-01-14",
     },
     {
       id: "003/2024",
-      titulo: "Análise de Peculato - Servidor Civil",
-      orgao: "Secretaria de Ressocialização",
+      titulo: "Análise de Peculato - Servidor",
+      orgao: "Ressocialização",
       status: "rascunho",
       data: "2024-01-13",
     }
@@ -68,10 +67,10 @@ const Dashboard = ({ user }: DashboardProps) => {
 
   const getOrgaoBadge = (orgao: string) => {
     const colors = {
-      "Polícia Militar": "bg-blue-100 text-blue-800",
-      "Polícia Civil": "bg-green-100 text-green-800", 
-      "Secretaria de Ressocialização": "bg-purple-100 text-purple-800",
-      "Corpo de Bombeiros": "bg-red-100 text-red-800"
+      "Segurança Pública": "bg-blue-100 text-blue-800",
+      "Investigação": "bg-green-100 text-green-800", 
+      "Ressocialização": "bg-purple-100 text-purple-800",
+      "Emergências": "bg-red-100 text-red-800"
     };
     return <Badge className={colors[orgao as keyof typeof colors] || "bg-gray-100 text-gray-800"}>{orgao}</Badge>;
   };
