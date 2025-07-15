@@ -41,7 +41,7 @@ const LoginForm = ({ onLogin, onUserChange }: LoginFormProps) => {
         
         toast({
           title: "Login realizado com sucesso!",
-          description: `Bem-vindo ao NOBILIS-IA - ${orgao}`,
+          description: `Bem-vindo ao NOBILIS-IA`,
         });
       } else {
         toast({
@@ -114,10 +114,10 @@ const LoginForm = ({ onLogin, onUserChange }: LoginFormProps) => {
                 <SelectValue placeholder="Selecione seu órgão" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="PMPE">PMPE - Polícia Militar de Pernambuco</SelectItem>
-                <SelectItem value="PCPE">PCPE - Polícia Civil de Pernambuco</SelectItem>
-                <SelectItem value="SERES">SERES - Secretaria de Ressocialização</SelectItem>
-                <SelectItem value="BMPE">BMPE - Corpo de Bombeiros Militar</SelectItem>
+                <SelectItem value="policia_militar">Polícia Militar de Pernambuco</SelectItem>
+                <SelectItem value="policia_civil">Polícia Civil de Pernambuco</SelectItem>
+                <SelectItem value="ressocializacao">Secretaria de Ressocialização</SelectItem>
+                <SelectItem value="bombeiros">Corpo de Bombeiros Militar</SelectItem>
               </SelectContent>
             </Select>
           </div>

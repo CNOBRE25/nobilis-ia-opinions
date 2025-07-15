@@ -33,21 +33,21 @@ const Dashboard = ({ user }: DashboardProps) => {
     {
       id: "001/2024",
       titulo: "Análise de Prescrição - Deserção Militar",
-      orgao: "PMPE",
+      orgao: "Polícia Militar",
       status: "aprovado",
       data: "2024-01-15",
     },
     {
       id: "002/2024", 
       titulo: "Parecer sobre Insubordinação",
-      orgao: "PMPE",
+      orgao: "Polícia Militar",
       status: "revisao",
       data: "2024-01-14",
     },
     {
       id: "003/2024",
       titulo: "Análise de Peculato - Servidor Civil",
-      orgao: "SERES",
+      orgao: "Secretaria de Ressocialização",
       status: "rascunho",
       data: "2024-01-13",
     }
@@ -68,10 +68,10 @@ const Dashboard = ({ user }: DashboardProps) => {
 
   const getOrgaoBadge = (orgao: string) => {
     const colors = {
-      PMPE: "bg-blue-100 text-blue-800",
-      PCPE: "bg-green-100 text-green-800", 
-      SERES: "bg-purple-100 text-purple-800",
-      BMPE: "bg-red-100 text-red-800"
+      "Polícia Militar": "bg-blue-100 text-blue-800",
+      "Polícia Civil": "bg-green-100 text-green-800", 
+      "Secretaria de Ressocialização": "bg-purple-100 text-purple-800",
+      "Corpo de Bombeiros": "bg-red-100 text-red-800"
     };
     return <Badge className={colors[orgao as keyof typeof colors] || "bg-gray-100 text-gray-800"}>{orgao}</Badge>;
   };
@@ -84,7 +84,7 @@ const Dashboard = ({ user }: DashboardProps) => {
           Bem-vindo, {user?.nome || "Usuário"}!
         </h2>
         <p className="text-blue-100">
-          Painel de controle do NOBILIS-IA - {user?.orgao || "Sistema"}
+          Painel de controle do NOBILIS-IA
         </p>
       </div>
 

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -116,7 +115,7 @@ const NovoParecer = ({ user, onClose, onSave }: NovoParecerProps) => {
     // Simulação da geração com ChatGPT 4-o mini
     setTimeout(() => {
       const parecer = `
-PARECER JURÍDICO N° ${user?.orgao || 'PMPE'}-${String(Math.floor(Math.random() * 1000)).padStart(3, '0')}/2024
+PARECER JURÍDICO N° ${user?.orgao || 'Sistema'}-${String(Math.floor(Math.random() * 1000)).padStart(3, '0')}/2024
 
 I. RELATÓRIO
 
@@ -160,7 +159,7 @@ Gerado por: NOBILIS-IA v1.0 (ChatGPT 4-o Mini)
   const salvarParecer = () => {
     const novoParece = {
       id: Date.now().toString(),
-      numero_protocolo: `${user?.orgao || 'PMPE'}-${String(Math.floor(Math.random() * 1000)).padStart(3, '0')}-2024`,
+      numero_protocolo: `${user?.orgao || 'Sistema'}-${String(Math.floor(Math.random() * 1000)).padStart(3, '0')}-2024`,
       ...formData,
       conteudo_parecer: parecerGerado,
       status: "rascunho",

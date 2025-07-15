@@ -30,10 +30,10 @@ const Index = () => {
             </div>
             
             <div className="flex flex-wrap justify-center gap-2 mb-8">
-              <Badge variant="secondary" className="bg-blue-800 text-blue-100">PMPE</Badge>
-              <Badge variant="secondary" className="bg-green-800 text-green-100">PCPE</Badge>
-              <Badge variant="secondary" className="bg-purple-800 text-purple-100">SERES</Badge>
-              <Badge variant="secondary" className="bg-red-800 text-red-100">BMPE</Badge>
+              <Badge variant="secondary" className="bg-blue-800 text-blue-100">Polícia Militar</Badge>
+              <Badge variant="secondary" className="bg-green-800 text-green-100">Polícia Civil</Badge>
+              <Badge variant="secondary" className="bg-purple-800 text-purple-100">Secretaria de Ressocialização</Badge>
+              <Badge variant="secondary" className="bg-red-800 text-red-100">Corpo de Bombeiros</Badge>
             </div>
           </div>
 
@@ -105,7 +105,7 @@ const Index = () => {
             
             <div className="flex items-center space-x-4">
               <Badge variant="outline" className="bg-blue-50 text-blue-700">
-                {user?.orgao || 'PMPE'}
+                {user?.orgao || 'Sistema'}
               </Badge>
               <Button 
                 variant="outline" 

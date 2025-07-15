@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -31,11 +30,11 @@ const PareceresSection = ({ user }: PareceresProps) => {
   const pareceres = [
     {
       id: "001/2024",
-      numero_protocolo: "PMPE-001-2024",
+      numero_protocolo: "PM-001-2024",
       titulo: "Análise de Prescrição - Deserção Militar",
       servidor: "Soldado João Silva",
       categoria: "militar_estadual",
-      orgao: "PMPE",
+      orgao: "Polícia Militar",
       area_direito: "penal_militar",
       status: "aprovado",
       data_criacao: "2024-01-15",
@@ -46,11 +45,11 @@ const PareceresSection = ({ user }: PareceresProps) => {
     },
     {
       id: "002/2024",
-      numero_protocolo: "PMPE-002-2024", 
+      numero_protocolo: "PM-002-2024", 
       titulo: "Parecer sobre Insubordinação em Serviço",
       servidor: "Cabo Maria Santos",
       categoria: "militar_estadual",
-      orgao: "PMPE",
+      orgao: "Polícia Militar",
       area_direito: "administrativo",
       status: "revisao",
       data_criacao: "2024-01-14",
@@ -61,11 +60,11 @@ const PareceresSection = ({ user }: PareceresProps) => {
     },
     {
       id: "003/2024",
-      numero_protocolo: "SERES-003-2024",
+      numero_protocolo: "SR-003-2024",
       titulo: "Análise de Peculato - Servidor Civil",
       servidor: "Ana Paula Oliveira",
       categoria: "servidor_civil", 
-      orgao: "SERES",
+      orgao: "Secretaria de Ressocialização",
       area_direito: "penal",
       status: "rascunho",
       data_criacao: "2024-01-13",
@@ -76,11 +75,11 @@ const PareceresSection = ({ user }: PareceresProps) => {
     },
     {
       id: "004/2024",
-      numero_protocolo: "PCPE-004-2024",
+      numero_protocolo: "PC-004-2024",
       titulo: "Parecer sobre Abuso de Autoridade",
       servidor: "Delegado Carlos Ferreira",
       categoria: "policial_civil",
-      orgao: "PCPE", 
+      orgao: "Polícia Civil", 
       area_direito: "administrativo",
       status: "aprovado",
       data_criacao: "2024-01-12",
@@ -91,11 +90,11 @@ const PareceresSection = ({ user }: PareceresProps) => {
     },
     {
       id: "005/2024",
-      numero_protocolo: "BMPE-005-2024",
+      numero_protocolo: "BM-005-2024",
       titulo: "Análise de Deserção - Bombeiro Militar", 
       servidor: "Sargento Pedro Costa",
       categoria: "bombeiro_militar",
-      orgao: "BMPE",
+      orgao: "Corpo de Bombeiros",
       area_direito: "penal_militar",
       status: "entregue",
       data_criacao: "2024-01-11",
@@ -132,13 +131,13 @@ const PareceresSection = ({ user }: PareceresProps) => {
 
   const getOrgaoBadge = (orgao: string) => {
     const orgaoConfig = {
-      PMPE: { color: "bg-blue-100 text-blue-800", label: "PMPE" },
-      PCPE: { color: "bg-green-100 text-green-800", label: "PCPE" },
-      SERES: { color: "bg-purple-100 text-purple-800", label: "SERES" },
-      BMPE: { color: "bg-red-100 text-red-800", label: "BMPE" }
+      "Polícia Militar": { color: "bg-blue-100 text-blue-800", label: "Polícia Militar" },
+      "Polícia Civil": { color: "bg-green-100 text-green-800", label: "Polícia Civil" },
+      "Secretaria de Ressocialização": { color: "bg-purple-100 text-purple-800", label: "Secretaria de Ressocialização" },
+      "Corpo de Bombeiros": { color: "bg-red-100 text-red-800", label: "Corpo de Bombeiros" }
     };
     
-    const config = orgaoConfig[orgao as keyof typeof orgaoConfig] || orgaoConfig.PMPE;
+    const config = orgaoConfig[orgao as keyof typeof orgaoConfig] || { color: "bg-blue-100 text-blue-800", label: orgao };
     return <Badge className={config.color}>{config.label}</Badge>;
   };
 
